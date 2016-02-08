@@ -1,0 +1,6 @@
+address: irc.something.net
+port: 6667
+nickname: funcbot
+username: funcbot
+realname: Funcbot
+channels: ['#somechannel']
