@@ -3,4 +3,5 @@ port: 6667
 nickname: funcbot
 username: funcbot
 realname: Funcbot
+nickserv: password
 channels: ['#somechannel']

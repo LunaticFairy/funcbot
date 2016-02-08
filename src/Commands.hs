@@ -29,6 +29,15 @@ joinCfg = do
     c <- asks connInfo
     io $ writeConnection h $ printf "JOIN %s" $ intercalate "," (liftM unpack $ channels c)
 
+nickservCfg :: Irc ()
+nickservCfg = do
+    h <- asks conn
+    c <- asks connInfo
+    io $ writeConnection h $ printf "NICKSERV IDENTIFY %s" $ nickserv c
+
+autoCfg :: Irc ()
+autoCfg = nickservCfg >> joinCfg
+
 privmsg :: String -> String -> Irc ()
 privmsg dest msg = do
     h <- asks conn

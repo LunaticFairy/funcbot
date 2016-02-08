@@ -21,5 +21,5 @@ main = do
             Right r -> runIrcT (handle r) h c
 
 handle :: IrcLine -> Irc ()
-handle (IrcLine _ "376" _ _) = joinCfg
-handle (IrcLine _ _ _ _) = io $ return ()
+handle (IrcLine _ "376" _ _) = autoCfg
+handle (IrcLine _ _ _ _) = return ()
